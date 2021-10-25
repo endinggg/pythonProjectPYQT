@@ -5,7 +5,7 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel
 
 
-class AuthorizationWindow(QMainWindow):
+class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('authorization.ui', self)
@@ -15,18 +15,18 @@ class AuthorizationWindow(QMainWindow):
 
         self.icon_user1 = QPixmap('icon_user.png')
         self.icon_user = QLabel(self)
-        self.icon_user.move(84, 160)
+        self.icon_user.move(214, 217)
         self.icon_user.resize(50, 50)
         self.icon_user.setPixmap(self.icon_user1)
 
         self.icon_diet1 = QPixmap('icon_diet.png')
         self.icon_diet = QLabel(self)
-        self.icon_diet.move(300, 130)
-        self.icon_diet.resize(300, 300)
+        self.icon_diet.move(187, 75)
+        self.icon_diet.resize(175, 140)
         self.icon_diet.setPixmap(self.icon_diet1)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = AuthorizationWindow()
+    ex = MyWidget()
     ex.show()
     sys.exit(app.exec())
