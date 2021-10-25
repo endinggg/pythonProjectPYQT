@@ -5,7 +5,7 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel
 
 
-class MyWidget(QMainWindow):
+class AuthorizationWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('authorization.ui', self)
@@ -27,6 +27,6 @@ class MyWidget(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = MyWidget()
+    ex = AuthorizationWindow()
     ex.show()
     sys.exit(app.exec())
