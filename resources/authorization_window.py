@@ -1,11 +1,14 @@
 import sys
 
-from PyQt5.QtGui import QPixmap
 from PyQt5 import uic
-from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QLineEdit, QPushButton
+from PyQt5.QtCore import Qt
+from sqlite3 import *
+from registory import Registration
 
 
-class MyWidget(QMainWindow):
+class Authorization(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('authorization.ui', self)
@@ -25,8 +28,18 @@ class MyWidget(QMainWindow):
         self.icon_diet.resize(175, 140)
         self.icon_diet.setPixmap(self.icon_diet1)
 
+        self.button_registory.clicked.connect(self.registration)
+
+
+    def entry(self):
+        pass
+
+    def registration(self):
+        pass
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = MyWidget()
+    ex = Authorization()
     ex.show()
     sys.exit(app.exec())
