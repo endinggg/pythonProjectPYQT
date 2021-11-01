@@ -5,7 +5,8 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QLineEdit, QPushButton
 from PyQt5.QtCore import Qt
 from sqlite3 import *
-from registory import Registration
+from registory import *
+from entry import *
 
 
 class Authorization(QMainWindow):
@@ -29,7 +30,7 @@ class Authorization(QMainWindow):
         self.icon_diet.setPixmap(self.icon_diet1)
 
         self.button_registory.clicked.connect(self.registration)
-
+        self.button_entry.clicked.connect(self.entry())
 
     def entry(self):
         pass
