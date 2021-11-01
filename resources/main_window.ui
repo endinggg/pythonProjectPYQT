@@ -39,6 +39,9 @@
          <pointsize>14</pointsize>
         </font>
        </property>
+       <property name="text">
+        <string/>
+       </property>
       </widget>
      </item>
      <item>
@@ -48,10 +51,13 @@
          <pointsize>14</pointsize>
         </font>
        </property>
+       <property name="text">
+        <string/>
+       </property>
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="spinBox">
+      <widget class="QSpinBox" name="age">
        <property name="font">
         <font>
          <pointsize>20</pointsize>
@@ -309,13 +315,13 @@
      <string notr="true">color:  rgb(0, 0, 0)</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="eat_today">
      <attribute name="title">
       <string>Съедено за день</string>
      </attribute>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="value_calories_1">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -340,15 +346,15 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="need_to_eat_today">
      <attribute name="title">
       <string>Осталось съесть за день</string>
      </attribute>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QLineEdit" name="value_calories_2">
       <property name="geometry">
        <rect>
         <x>110</x>
-        <y>20</y>
+        <y>40</y>
         <width>113</width>
         <height>20</height>
        </rect>
