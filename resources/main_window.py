@@ -4,9 +4,10 @@ from PyQt5 import uic, QtCore
 from PyQt5.QtCore import QSize
 from PyQt5.QtGui import QPixmap, QIcon
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QFileDialog
-import logic
+from authorization_window import *
 
-class MainWindow(QMainWindow):
+
+class MainWindowApp(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('main_window.ui', self)
@@ -28,8 +29,8 @@ class MainWindow(QMainWindow):
 
         self.button_change_avatar.clicked.connect(self.change_avatar)
 
-        self.dateEdit.setDate(QtCore.QDate(2021, 11, 1))
-        self.dateEdit.setDisplayFormat("dd/MM/yyyy")
+        self.date.setDate(QtCore.QDate(2021, 11, 1))
+        self.date.setDisplayFormat("dd/MM/yyyy")
 
         self.weight.textChanged[str].connect(self.characteristics)
         self.height.textChanged[str].connect(self.characteristics)
@@ -56,6 +57,6 @@ class MainWindow(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = MainWindow()
+    ex = MainWindowApp()
     ex.show()
     sys.exit(app.exec())
