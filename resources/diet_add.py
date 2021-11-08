@@ -12,12 +12,19 @@ class Food(QWidget):
 
         self.add_user_food.clicked.connect(self.add_food)
 
+        self.food.itemActivated.connect(self.elements)
+
+    def elements(self, item):
+        value = item.text().split(', ')
+        self.elements_value = value[1:]
+        self.return_val()
+
     def add_food(self):
         self.food.addItem('{}'.format(self.user_food.text()))
-        self.return_food()
 
-    def return_food(self):
-        return self.user_food.text()
+    def return_val(self):
+        print(self.elements_value)
+        return self.elements_value
 
 
 class AddDiet(QWidget):
@@ -31,13 +38,16 @@ class AddDiet(QWidget):
         self.add_to_lunch.clicked.connect(self.food)
         self.add_to_dinner.clicked.connect(self.food)
         self.add_to_snack.clicked.connect(self.food)
+        self.ccalories()
 
     def food(self):
         self.app1 = Food()
         self.app1.show()
-        self.val_list = self.app1.return_food().split(', ')
-        self.val_food = self.val_list[1]
-        print(self.val_food)
+
+    def ccalories(self):
+        self.x = int(self.breakfast_change.text()) + int(self.lunch_change.text()) + int(self.dinner_change.text()) + \
+                 int(self.snack_change.text())
+        return self.x
 
 
 if __name__ == '__main__':
