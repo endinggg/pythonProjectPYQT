@@ -52,9 +52,6 @@ class MainWindowApp(QMainWindow):
         self.index = round(self.user_weight / ((self.user_height / 100) ** 2), 1)
         return self.index
 
-    def PFC(self):
-        pass
-
     def calories(self):
         self.value_calories_2 = (self.user_weight * 10 + self.user_height * 6.75 - self.user_age * 5) \
                                 * 1.2 - self.value_calories_1
@@ -64,6 +61,8 @@ class MainWindowApp(QMainWindow):
     def add_diet(self):
         self.diet2 = AddDiet()
         self.diet2.show()
+        self.p = self.diet2.ccalories()
+        self.ccalories.setText(f'{self.p}')
 
     def water_add(self):
         self.water2 = AddWater()
