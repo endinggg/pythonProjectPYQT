@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>340</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(18, 130, 119)</string>
+  </property>
+  <widget class="QLabel" name="user_value">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>110</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:  rgb(185, 196, 201)</string>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="user_index_label">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>70</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:  rgb(185, 196, 201)</string>
+   </property>
+   <property name="text">
+    <string>ваш индекс</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="user_status">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>140</y>
+     <width>251</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:  rgb(185, 196, 201)</string>
+   </property>
+   <property name="text">
+    <string>у вас</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="IWB">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>20</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:  rgb(185, 196, 201)</string>
+   </property>
+   <property name="text">
+    <string>Индекс массы тела</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="deficit">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>180</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:  rgb(185, 196, 201)</string>
+   </property>
+   <property name="text">
+    <string>&lt; 18,5 - Дефицит массы тела</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="normal">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>205</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:  rgb(185, 196, 201)</string>
+   </property>
+   <property name="text">
+    <string>18,5 - 24,9 - Нормальная масса тела</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="excess">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>230</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:  rgb(185, 196, 201)</string>
+   </property>
+   <property name="text">
+    <string>25- 29,9 - Избыточная масса тела</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="obesity">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>260</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:  rgb(185, 196, 201)</string>
+   </property>
+   <property name="text">
+    <string>&gt; 30 - Ожирение</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="logo_app">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>300</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poor Richard</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:  rgb(185, 196, 201)</string>
+   </property>
+   <property name="text">
+    <string>MyDiet</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
