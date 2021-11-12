@@ -63,15 +63,18 @@ class MainWindowApp(QMainWindow):
         self.age.setValue(self.user_age)
 
     def save_values(self):
-        self.user_height = int(self.height.text())
-        self.user_weight = int(self.weight.text())
-        self.user_age = self.age.value()
-        users_parametrs(self.user_height, self.user_weight, self.user_age)
-        self.index = round(self.user_weight / ((self.user_height / 100) ** 2), 1)
-        self.height.setEnabled(False)
-        self.weight.setEnabled(False)
-        self.age.setEnabled(False)
-        return self.index
+        try:
+            self.user_height = int(self.height.text())
+            self.user_weight = int(self.weight.text())
+            self.user_age = self.age.value()
+            users_parametrs(self.user_height, self.user_weight, self.user_age)
+            self.index = round(self.user_weight / ((self.user_height / 100) ** 2), 1)
+            self.height.setEnabled(False)
+            self.weight.setEnabled(False)
+            self.age.setEnabled(False)
+            return self.index
+        except ValueError:
+            QMessageBox.warning(self, 'Ошибка!', 'Неверный ввод данных', QMessageBox.Retry)
 
     def add_diet(self):
         self.diet2 = AddDiet()
@@ -85,8 +88,8 @@ class MainWindowApp(QMainWindow):
         self.carbohydrates.setText(f'{val[3]}')
         self.value_calories = val[0]
         self.value_calories_1.setText(f'{val[0]} ккал')
-        self.value_calories2 = (self.user_weight * 10 + self.user_height * 6.75 - self.user_age * 5) \
-                                * 1.2 - self.value_calories
+        self.value_calories2 = round((self.user_weight * 10 + self.user_height * 6.75 - self.user_age * 5) \
+                                * 1.2 - self.value_calories)
         self.value_calories_2.setText(f'{self.value_calories2} ккал')
 
     def water_add(self):
