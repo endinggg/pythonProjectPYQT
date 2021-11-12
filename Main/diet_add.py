@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox
 from food_db import add_components, deleting, save_values
 
 
@@ -36,48 +36,55 @@ class AddDiet(QWidget):
 
     def breakfast(self):
         val = self.elements()
-        self.ccal_breakfast += int(val[0])
-        self.breakfast_label.setText(f'Завтрак: {self.ccal_breakfast} ккал')
-        self.proteins += int(val[1])
-        self.all_fats += int(val[2])
-        self.carbohs += int(val[3])
+        if val:
+            self.ccal_breakfast += int(val[0])
+            self.breakfast_label.setText(f'Завтрак: {self.ccal_breakfast} ккал')
+            self.proteins += int(val[1])
+            self.all_fats += int(val[2])
+            self.carbohs += int(val[3])
 
     def lunch(self):
         val = self.elements()
-        self.ccal_lunch += int(val[0])
-        self.lunch_label.setText(f'Обед: {self.ccal_lunch} ккал')
-        self.proteins += int(val[1])
-        self.all_fats += int(val[2])
-        self.carbohs += int(val[3])
+        if val:
+            self.ccal_lunch += int(val[0])
+            self.lunch_label.setText(f'Обед: {self.ccal_lunch} ккал')
+            self.proteins += int(val[1])
+            self.all_fats += int(val[2])
+            self.carbohs += int(val[3])
 
     def dinner(self):
         val = self.elements()
-        self.ccal_dinner += int(val[0])
-        self.dinner_label.setText(f'Ужин: {self.ccal_dinner} ккал')
-        self.proteins += int(val[1])
-        self.all_fats += int(val[2])
-        self.carbohs += int(val[3])
+        if val:
+            self.ccal_dinner += int(val[0])
+            self.dinner_label.setText(f'Ужин: {self.ccal_dinner} ккал')
+            self.proteins += int(val[1])
+            self.all_fats += int(val[2])
+            self.carbohs += int(val[3])
 
     def snack(self):
         val = self.elements()
-        self.ccal_snack += int(val[0])
-        self.snack_label.setText(f'Перекус: {self.ccal_snack} ккал')
-        self.proteins += int(val[1])
-        self.all_fats += int(val[2])
-        self.carbohs += int(val[3])
+        if val:
+            self.ccal_snack += int(val[0])
+            self.snack_label.setText(f'Перекус: {self.ccal_snack} ккал')
+            self.proteins += int(val[1])
+            self.all_fats += int(val[2])
+            self.carbohs += int(val[3])
 
     def accepting(self):
         self.food_list.addItem('{}'.format(self.user_food.text()))
 
     def elements(self):
-        self.value = self.user_food.text().split(', ')
-        self.name = self.value[0]
-        self.calories = self.value[1]
-        self.protein = self.value[2]
-        self.fats = self.value[3]
-        self.carbohydrates = self.value[4]
-        add_components(self.name, self.calories, self.protein, self.fats, self.carbohydrates)
-        return self.calories, self.protein, self.fats, self.carbohydrates
+        try:
+            self.value = self.user_food.text().split(', ')
+            self.name = self.value[0]
+            self.calories = self.value[1]
+            self.protein = self.value[2]
+            self.fats = self.value[3]
+            self.carbohydrates = self.value[4]
+            add_components(self.name, self.calories, self.protein, self.fats, self.carbohydrates)
+            return self.calories, self.protein, self.fats, self.carbohydrates
+        except IndexError:
+            QMessageBox.warning(self, 'Ошибка!', 'Неверный ввод данных', QMessageBox.Retry)
 
     def add_food(self):
         self.user_food.setEnabled(True)
@@ -88,7 +95,6 @@ class AddDiet(QWidget):
 
     def save_val(self):
         self.summ_cal = self.ccal_breakfast + self.ccal_lunch + self.ccal_dinner + self.ccal_snack
-        print(self.summ_cal, self.proteins, self.all_fats, self.carbohs)
         save_values(self.summ_cal, self.proteins, self.all_fats, self.carbohs)
 
 
